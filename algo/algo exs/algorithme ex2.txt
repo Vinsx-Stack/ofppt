@@ -1,0 +1,29 @@
+algorithme 					ex2
+variables				n=entier
+debut			
+		ecrire("saisissez le nombre de copies")
+		lire (n)
+	Si n=10 Alors
+		n ← n*0.30
+		ecrire("le prix est:", n," dhs") 	
+	Sinon
+		Si n<=30 Alors
+			n ← n*0.25
+			ecrire("le prix est:", n," dhs") 	
+	Sinon
+		n ← n*0.20
+		ecrire("le prix est:", n," dhs") 	
+
+code python: 
+
+n=int(input("saisissez le nombre de photocopie:"))
+
+if n==10:
+  n=n*0.30 
+  print("le prix est:", n," dhs")
+elif n<=30:
+  n=n*0.25
+  print("le prix est:", n," dhs")
+else:
+  n=n*0.20
+  print("le prix est", n," dhs")

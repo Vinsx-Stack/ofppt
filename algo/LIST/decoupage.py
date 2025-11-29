@@ -1,0 +1,13 @@
+mylist=[0,1,2,3,4,5,6,7,8,9,10]
+L0=mylist[2:8:2]
+print(L0)
+L1=mylist[:5]
+print(L1)
+L2=mylist[4:]
+print(L2)
+L3=mylist[::3]
+print(L3)
+L4=mylist[::-1]
+print(L4)
+L5=mylist[8:2:-1]
+print(L5)
