@@ -214,7 +214,6 @@ body {
     text-decoration: none;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .navbar-container {
         gap: 1.5rem;
