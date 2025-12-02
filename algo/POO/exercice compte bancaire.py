@@ -1,60 +1,73 @@
 class Client:
-  def __init__(self, n, p, v):
-    self.__name=n
-    self.__prenom=p
-    self.__ville=v
+    def __init__(self,n:str,p:str,v:str):
+        self.__nom=n
+        self.__prenom=p
+        self.__ville=v
 
+    @property
+    def Nom(self):
+        return self.__nom
+    @Nom.setter
+    def Nom(self,n):
+        self.__nom=n
+    @property
+    def Prenom(self):
+        return self.__prenom
+    @Prenom.setter
+    def Prenom(self,p):
+        self.__prenom=p
+    @property
+    def Ville(self):
+        return self.__ville
+    @Ville.setter
+    def Ville(self,v):
+        self.__ville=v
 
-  @property
-  def Name(self):
-    return self.__name
-  @Name.setter
-  def Name(self,new):
-    self.__name=new
 
 class Compte:
-  def __init__(self, numero, titulaire, solde=0):
-    self.__numero = numero
-    self.__titulaire = titulaire
-    self.__solde = solde
-  def get_numero(self):
-    return self.__numero
-  def set_numero(self, new_value):
-    self.__numero = new_value
-  def get_titulaire(self):
-    return self.__titulaire
-  def set_titulaire(self, new_value):
-    self.__titulaire = new_value
-  def get_solde(self):
-    return self.__solde
-  def set_solde(self, new_value):
-    self.__solde = new_value
-  def afficher(self):
-    print(f"Numero: {self.__numero}")
-    print(f"Nom du client: {self.__titulaire}")
-    print(f"Solde du compte: {self.__solde} euros")
-  
-  def depot(self, montant):
-    self.__solde += montant
-  def retirer(self, montant):
-    if montant < self.__solde:
-      print("Montant retirer avec succes !")
-      self.__solde = self.__solde - montant
-    else:
-      print("Fonds insuffisant sur votre compte.")
+    def __init__(self,numero:int,c:Client,solde:float):
+        self.__numero=numero
+        self.__client=c
+        self.__solde=solde
 
-  def __str__(self):
-    return f"{self.__numero}\t{self.__titulaire}\t{self.__solde} euros"
 
-if __name__=='__main__':
-  c1=Compte(1001, "Rayane Lasfar", 5000)
-  c1.afficher()
-  print("-----------------------------------")
-  montant_depot = float(input("Tapez le montant a deposer: "))
-  c1.depot(montant_depot)
-  print("-----------------------------------")
-  montant_retrait = float(input("Tapez le montant a retirer: "))
-  c1.retirer(montant_retrait)
-  print("-----------------------------------")
-  print(c1)
+    def getnumero(self): 
+        return self.__numero
+    
+    def setNumero(self,new): 
+        self.__numero=new
 
+    def getclient(self): 
+        return self.__client
+    
+    def setclient(self,new): 
+        self.__client=new
+
+    def getsolde(self): 
+        return self.__solde
+    
+    def deposer(self,m):
+        self.__solde+=m
+
+    def retirer(self,m):
+        if self.__solde>m:
+          self.__solde-=m
+        else:
+            print("ce solde n'est pas suffisent")
+    
+    def __str__(self):
+        return  f"{self.__numero} \t {self.__client.Nom}\t{self.__client.Prenom}\t{self.__solde}"
+ 
+
+c1=Client("kenza","kenzaa","casablanca")
+c2=Client("mouhim","mohamed","casablanca")
+
+
+cmpte=Compte(1,c2,2000)
+print(cmpte)
+n=float(input("donner le montant pour deposer:"))
+cmpte.deposer(n)
+print(cmpte)
+n=int(input("donner le montant pour retirer:"))
+cmpte.retirer(n)
+print(cmpte)
