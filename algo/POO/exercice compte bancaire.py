@@ -1,3 +1,17 @@
+class Client:
+  def __init__(self, n, p, v):
+    self.__name=n
+    self.__prenom=p
+    self.__ville=v
+
+
+  @property
+  def Name(self):
+    return self.__name
+  @Name.setter
+  def Name(self,new):
+    self.__name=new
+
 class Compte:
   def __init__(self, numero, titulaire, solde=0):
     self.__numero = numero
