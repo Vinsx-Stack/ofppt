@@ -1,11 +1,13 @@
 
 
-class Stagaire:
-    def __init__(self, num=None, n=None, a=None):
-        compteur=1
-        self.__numero=num
+class Stagiaire:
+    compteur=1
+    def __init__(self, n=None, a=None):
+
+        self.__numero=Stagiaire.compteur
         self.__name=n
         self.__age=a
+        Stagiaire.compteur+=1
 
     @property
     def Numero(self):
@@ -32,12 +34,11 @@ class Stagaire:
     
 
 if __name__ == '__main__':
-    stg1=Stagaire(1000, 'Anas', 21)
+    stg1=Stagiaire( 'Anas', 21)
     print(stg1)
 
 
-    stg2=Stagaire()
-    stg2.Numero=2000
+    stg2=Stagiaire()
     stg2.Name= 'Yasser'
     stg2.Age = 20
     print(stg2) 
