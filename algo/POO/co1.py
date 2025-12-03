@@ -1,6 +1,3 @@
-
-
-
 class Stagiaire:
     def __init__(self, n, nom, f):
         self.__numero = n
@@ -70,5 +67,3 @@ if __name__=='__main__':
     et1=Etablissement("isfo", "Casablanca")
     et1.ajouter()
     et1.afficher()
-
-
