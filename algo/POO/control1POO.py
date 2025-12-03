@@ -48,8 +48,7 @@ class Etablissement:
             stg=Stagiaire(num,nom,filier)
             self.Lstg.append(stg)
             print("Ajouter Avec Succes")
-            print("Voulez Vous Ajouter Un Autre Stagiaire ? Y/N")
-            saisie=input("voulez-vous ajouter un autre stagiare ?")
+            saisie=input("voulez-vous ajouter un autre stagiare ? Y/N : ")
 
 
 
@@ -61,9 +60,21 @@ class Etablissement:
         for s in self.Lstg:
             print(s)
         print(f"il y a {len(self.Lstg)} Stagiaire Dans Cet Etablissement")
+
+    def rechercher(self,num):
+        for s in self.Lstg:
+            if s.Numero==num:
+                return s
+
         
         
 if __name__=='__main__':
     et1=Etablissement("isfo", "Casablanca")
     et1.ajouter()
     et1.afficher()
+    N = int(input("Taper Le Numero a rechercher : "))
+    stg=et1.rechercher(N)
+    if stg is not None:
+        print(stg)
+    else:
+        print("Stagiaire n'existe pas")
