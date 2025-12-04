@@ -1,0 +1,2 @@
+1;Doe;John;85;Informatique
+2;Smith;Jane;90;Mathématiques
