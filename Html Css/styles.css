@@ -412,3 +412,35 @@ body {
         letter-spacing: 0.5px;
     }
 }
+
+/* Your existing icon-link probably already has styles.
+   Add/override these: */
+.icon-link{
+  position: relative; /* IMPORTANT for badge positioning */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badge */
+.cart-badge{
+  position: absolute;
+  top: -6px;
+  right: -8px;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  
+
+  border-radius: 999px;
+  background: rgb(112, 112, 112);
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+
+ display: inline-block; /* instead of none *//
+}
