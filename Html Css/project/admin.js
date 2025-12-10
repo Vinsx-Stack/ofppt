@@ -39,7 +39,6 @@
       edit.className = 'btn btn-sm btn-outline-primary me-2';
       edit.textContent = 'Edit';
       edit.addEventListener('click', ()=>{
-        // populate form for editing
         editingId = it.id;
         nameEl.value = it.name || '';
         priceEl.value = it.price || '';
@@ -102,7 +101,6 @@
     showMessage('Product added');
   });
 
-  // allow cancel editing when form is reset by user (e.g., pressing Cancel if added)
   form.addEventListener('reset', ()=>{
     editingId = null;
     if(submitBtn) submitBtn.textContent = 'Add product';
