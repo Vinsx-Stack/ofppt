@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shop</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .product { background: #fff; padding: 15px; margin: 10px 0; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Our Clothes</h1>
+  <div id="product-list"></div>
+
+  <script>
+    const productList = document.getElementById('product-list');
+
+    // Default clothes already on the page
+    let defaultClothes = [
+      {name: "Black T-Shirt", category: "Tops", price: 29.99, sizes: ["S","M","L"]},
+      {name: "Blue Jeans", category: "Pants", price: 49.99, sizes: ["M","L","XL"]}
+    ];
+
+    // Get saved clothes from localStorage
+    let savedClothes = JSON.parse(localStorage.getItem('clothes')) || [];
+
+    // Combine default + saved clothes
+    let allClothes = defaultClothes.concat(savedClothes);
+
+    // Display all clothes
+    allClothes.forEach(item => {
+      const div = document.createElement('div');
+      div.classList.add('product');
+      div.innerHTML = `<h3>${item.name}</h3>
+                       <p>Category: ${item.category}</p>
+                       <p>Price: $${item.price}</p>
+                       <p>Sizes: ${item.sizes.join(', ')}</p>`;
+      productList.appendChild(div);
+    });
+  </script>
+</body>
+</html>

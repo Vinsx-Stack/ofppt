@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; box-sizing: border-box; }
+  </style>
+</head>
+<body>
+  <h1>Admin Panel - Add Clothes</h1>
+  <input type="text" id="name" placeholder="Item Name">
+  <input type="text" id="category" placeholder="Category">
+  <input type="number" id="price" placeholder="Price">
+  <input type="text" id="sizes" placeholder="Sizes (comma separated)">
+  <button onclick="addClothing()">Add Item</button>
+
+  <script>
+    function addClothing() {
+      const name = document.getElementById('name').value;
+      const category = document.getElementById('category').value;
+      const price = document.getElementById('price').value;
+      const sizes = document.getElementById('sizes').value.split(',').map(s => s.trim());
+
+      if(!name || !category || !price || sizes.length === 0){
+        alert("Fill all fields!");
+        return;
+      }
+
+      const newItem = {name, category, price, sizes};
+
+      // Get existing clothes from localStorage
+      let clothes = JSON.parse(localStorage.getItem('clothes')) || [];
+      clothes.push(newItem);
+
+      // Save updated clothes list
+      localStorage.setItem('clothes', JSON.stringify(clothes));
+      alert(`${name} added!`);
+
+      // Clear inputs
+      document.getElementById('name').value = '';
+      document.getElementById('category').value = '';
+      document.getElementById('price').value = '';
+      document.getElementById('sizes').value = '';
+    }
+  </script>
+</body>
+</html>

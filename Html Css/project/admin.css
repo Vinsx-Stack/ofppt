@@ -1,0 +1,9 @@
+body{ font-family: Poppins, Arial, sans-serif; background: #fff }
+.navbar{ background: #fff; border-bottom: 1px solid #eee; padding: 1rem 0}
+.navbar-container{ max-width:1200px; margin:0 auto; padding:0 2%; display:flex; align-items:center; justify-content:space-between}
+.logo-link{ font-weight:700; letter-spacing:6px; text-decoration:none}
+.admin-main{ max-width:1000px; margin:2rem auto}
+.admin-form{ background:#fafafa; padding:1.25rem; border-radius:8px; border:1px solid #eee }
+#adminList .product-row{ display:flex; gap:1rem; align-items:center; padding:.5rem 0; border-bottom:1px solid #f0f0f0}
+#adminList img{ width:80px; height:80px; object-fit:cover; border-radius:6px}
+#msg{ color: #155724; background: #d4edda; padding:.5rem; border-radius:4px; display:none }

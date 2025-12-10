@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none!important;
+    list-style: none;
+    font-family: "Helvetica Now Text", "Helvetica", "Arial", "sans-serif";
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    padding: 20px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 7px;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3.5rem;
+    flex: 1;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-links li a {
+    color: #ffffff !important;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0 !important;
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #dfdfdf !important;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+.p1{
+    color:  rgb(255, 255, 255);
+
+}
+.container p {
+    font-family: "Helvetica Now Text", "Helvetica", "Arial", "sans-serif" ;
+}
+/* Hamburger styles */
+.hamburger {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+/* Position hamburger at top-right */
+.hamburger {
+    position: absolute;
+    top: 25px;  /* same as header padding */
+    right: 9%;  /* match header horizontal padding */
+    z-index: 1000; /* ensure it's above nav */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .luxy-nav {
+        position: relative; /* ensure nav stays under hamburger */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px; /* below header */
+        right: 9%;  /* align with hamburger */
+        background-color: black;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none; /* hidden initially */
+    }
+
+    .nav-links li {
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex; /* show menu when active */
+    }
+}
+
+
+

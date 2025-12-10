@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luxy Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<script>
+  // Simple session gate: if not authed, redirect to login page
+  try {
+    if (sessionStorage.getItem('luxyAdminAuth') !== 'true') {
+      window.location.href = 'admin-login.html';
+    }
+  } catch (e) {
+    // ignore and redirect to login
+    window.location.href = 'admin-login.html';
+  }
+</script>
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <a href="index.html" class="logo-link">LUXY Admin</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="woman.html">Woman</a></li>
+      <li><a href="man.html">Man</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="index.html" class="icon-link">Back</a>
+    </div>
+  </div>
+</nav>
+
+<main class="admin-main container">
+  <h1 class="mb-3">Add a new product</h1>
+
+  <form id="adminForm" class="admin-form">
+    <div class="mb-3">
+      <label class="form-label">Product name</label>
+      <input type="text" id="name" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price (e.g. 29.99)</label>
+      <input type="text" id="price" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image URL</label>
+      <input type="url" id="image" class="form-control" placeholder="https://...">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea id="description" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <select id="category" class="form-select">
+        <option value="woman">Woman</option>
+        <option value="man">Man</option>
+        <option value="home">Home</option>
+      </select>
+    </div>
+
+    <div class="mb-3 d-flex gap-2">
+      <button type="submit" class="btn btn-dark">Add product</button>
+      <button type="button" id="clearBtn" class="btn btn-outline-secondary">Clear all admin items</button>
+    </div>
+
+    <div id="msg" role="status" aria-live="polite" style="margin-top: .5rem"></div>
+  </form>
+
+  <section class="mt-5">
+    <h2 class="mb-3">Existing admin products</h2>
+    <div id="adminList"></div>
+  </section>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

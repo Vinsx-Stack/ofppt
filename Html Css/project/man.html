@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-category="man">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
@@ -25,7 +25,7 @@
 <nav class="navbar">
     <div class="navbar-container">
         <div class="logo">
-            <a href="#" class="logo-link">LUXY</a>
+            <a href="index.html" class="logo-link">LUXY</a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -53,17 +53,8 @@
     </div>
 </nav>
 
-<div style="display: grid; grid-template-columns: 1fr;">
-    <div>
-        <img src="1560X1050-BANNER_DAKS-AW25_1400x.jpg" alt="Fashion Banner" style="width: 100%; height: auto;">
-    </div>
-</div>
-
-<div>
-    <div style="background-color:#f8f9fa; padding: 1rem; text-align: center; font-weight: bold; margin: 2rem; font-family: 'Cinzel', serif; border: solid 1px #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        NEW COLLECTION 2025 - EXPLORE THE LATEST TRENDS IN LUXURY FASHION NOW !
-    </div>
-</div>
+<!-- Dynamic products injected by products.js -->
+<div class="container" id="dynamic-products" style="margin-top: 1.5rem; margin-bottom: 1.5rem;"></div>
 
 <!-- PRODUCTS -->
 <div class="container" style="margin-top: 3rem; margin-bottom: 3rem;">
@@ -230,7 +221,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="product-card">
-                <img src="https://static.zara.net/assets/public/9128/519b/0801444289d7/f4493df9e942/image-59-f9f6b574-f2cc-457b-a814-3b04fb11a3fc_0/image-59-f9f6b574-f2cc-457b-a814-3b04fb11a3fc_0.jpg?ts=1764928437687&w=334"
+                <img src="https://static.zara.net/assets/public/a374/7973/d1cb4a7fbb7a/4c7d10cc3338/04937301047-e1/04937301047-e1.jpg?ts=1753346622055&w=269"
                      class="product-img" alt="Classic Black T-Shirt">
                 <div class="product-body">
                     <h5 class="product-title">Classic Black T-Shirt</h5>
@@ -242,7 +233,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="product-card">
-                <img src="https://static.zara.net/assets/public/0767/c6f4/e08a4baf9e6a/41fbcb4a9bec/image-61-6727384b-3a55-4096-807d-a1f5a509fc74_0/image-61-6727384b-3a55-4096-807d-a1f5a509fc74_0.jpg?ts=1764928438559&w=334"
+                <img src="https://static.zara.net/assets/public/2996/efdd/5f16479d83dd/83e8abc94a2d/03003305814-e1/03003305814-e1.jpg?ts=1753359922016&w=269"
                      class="product-img" alt="Black Leather Pants">
                 <div class="product-body">
                     <h5 class="product-title">Double-breasted blazer</h5>
@@ -254,7 +245,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="product-card">
-                <img src="https://static.zara.net/assets/public/b31d/4a5a/f73d48d68651/148887b9b90e/image-60-54289287-4ab9-468d-90d0-ff5d863ad109_0/image-60-54289287-4ab9-468d-90d0-ff5d863ad109_0.jpg?ts=1764928438153&w=334"
+                <img src="https://static.zara.net/assets/public/e6aa/07f8/2fd4492ebd8e/e877df00c6ec/04090301519-e1/04090301519-e1.jpg?ts=1750674676644&w=269"
                      class="product-img" alt="White Casual Sneakers">
                 <div class="product-body">
                     <h5 class="product-title">Slim fit suit blazer</h5>
@@ -266,7 +257,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="product-card">
-                <img src="https://i.pinimg.com/736x/cb/b6/43/cbb643201f1bef4c0c81e8053cec6e03.jpg"
+                <img src="https://static.zara.net/assets/public/92de/75d9/ab2b45e78556/d60322525a75/00526302066-e1/00526302066-e1.jpg?ts=1753359848477&w=269"
                      class="product-img" alt="Blue Denim Jacket">
                 <div class="product-body">
                     <h5 class="product-title">Classic Blue T-Shirt</h5>
@@ -298,6 +289,9 @@
         </ul>
     </div>
 </footer>
+
+<!-- Dynamic products loader -->
+<script src="products.js"></script>
 
 <!-- SINGLE CLEAN CART SCRIPT -->
 <script>
